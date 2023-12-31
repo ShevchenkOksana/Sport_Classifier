@@ -1,3 +1,3 @@
 # Pet Project Sport Classifier
 
-FastAPI + Streamlit
+FastAPI + Streamlit demo
