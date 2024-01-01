@@ -1,0 +1,6 @@
+streamlit==1.18.0
+tensorflow==2.15.0
+efficientnet==1.1.1
+numpy~=1.26.2
+Pillow~=10.1.0
+altair==4.1.0
