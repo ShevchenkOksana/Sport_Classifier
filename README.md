@@ -22,7 +22,7 @@ This project includes code for model inference and a simple UI created using Str
    Run the code for model inference:
 
    ```bash
-   python inference.py
+   python src/inference.py
    ```
 
 3. **Run UI**
