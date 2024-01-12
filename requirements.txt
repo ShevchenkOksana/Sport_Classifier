@@ -4,3 +4,4 @@ efficientnet==1.1.1
 numpy~=1.26.2
 Pillow~=10.1.0
 altair==4.1.0
+torch~=2.1.2
