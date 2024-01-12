@@ -1,28 +1,30 @@
 # app.py
 import streamlit as st
-from inference import load_efficientnet_model, preprocess_image, predict_age
+from inference import preprocess_image, predict_age
 import numpy as np
-from google.colab import drive
+import torch
+from efficientnet_pytorch import EfficientNet
 
 
-# Load the EfficientNet model and corresponding weights
-drive.mount('/content/drive')
-# model_path = "/content/drive/MyDrive/EfficientNet-91.80.h5"
-# weights_path = "/content/drive/MyDrive/EfficientNet-weights.h5"
-model_path = "../models/EfficientNet-91.80.h5"
-weights_path = "../models/EfficientNet-weights.h5"
-model = load_efficientnet_model(model_path, weights_path)
+# Instantiate the EfficientNet model
+num_labels = 100
+efficientnet_variant = 'b3'
+Efficient_Net = EfficientNet.from_pretrained(f'efficientnet-{efficientnet_variant}', num_classes=num_labels)
+weights_path = "../models/weights_EfficientNet_best.h5"
+
+# Load the weights into the model
+state_dict = torch.load(weights_path)
+model = Efficient_Net.load_state_dict(state_dict)
 
 # Streamlit configuration
 st.set_page_config(layout="wide")
-st.markdown('<h1 style="text-align: center; color: #fffff;">EfficientNet Age Classifier</h1>',
+st.markdown('<h1 style="text-align: center; color: #fffff;">EfficientNet Sport Classifier</h1>',
             unsafe_allow_html=True)
 
 # Display introductory text
 st.write(
     '''
-    This is a simple app for the classification of EfficientNet Age Classifier.
-    This Streamlit example uses a FastAPI service as the backend.
+    This is a simple app for the classification of EfficientNet Sport Classifier.
     Visit this URL at `http://0.0.0.0:8000/docs` for FastAPI documentation.
     '''
 )
