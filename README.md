@@ -11,10 +11,9 @@ This project includes code for model inference and a simple UI created using Str
 
 1. **Add model weights**
 
-   - Download the model weights file "weights_EfficientNet_best.h5" from [this Google Drive link](https://drive.google.com/file/d/1U67VR7y0S6xFurOEAxLLJ9gu8ZmSZl04/view?usp=sharing).
-   
-   - Save the downloaded file to the "models" folder in your project directory.
+   - Download the model weights file "weights_EfficientNet_best.h5" from [this Google Drive link](https://drive.google.com/file/d/1cnojbtZ0mpeaa6U11HSe66y-TAvTI399/view?usp=drive_link).
 
+   - Save the downloaded file to the "models" folder in your project directory.
 
 2. **Install Dependencies**
 
