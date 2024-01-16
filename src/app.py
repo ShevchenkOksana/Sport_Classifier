@@ -6,11 +6,11 @@ import torch
 from efficientnet_pytorch import EfficientNet
 
 
-# Instantiate the EfficientNet model
+# Instantiate the  model
 num_labels = 100
 efficientnet_variant = 'b3'
 Efficient_Net = EfficientNet.from_pretrained(f'efficientnet-{efficientnet_variant}', num_classes=num_labels)
-weights_path = "../models/weights_EfficientNet_best.h5"
+weights_path = "../models/best_weights_EfficientNet.pth"
 
 # Load the weights into the model
 state_dict = torch.load(weights_path)
@@ -24,7 +24,7 @@ st.markdown('<h1 style="text-align: center; color: #fffff;">EfficientNet Sport C
 # Display introductory text
 st.write(
     '''
-    This is a simple app for the classification of EfficientNet Sport Classifier.
+    This is a simple app for Sport Classifier.
     Visit this URL at `http://0.0.0.0:8000/docs` for FastAPI documentation.
     '''
 )
